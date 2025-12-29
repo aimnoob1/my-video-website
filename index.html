@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的视频</title>
+    <style>
+        /* 重置所有默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* 整个页面样式 */
+        body {
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        /* 视频容器 */
+        .video-container {
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        /* 视频播放器 */
+        video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* 提示信息 */
+        .info {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                align-items: flex-start;
+                padding-top: 20px;
+            }
+            
+            video {
+                border-radius: 0;
+            }
+            
+            .info {
+                font-size: 12px;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <!-- 这里是视频播放器 -->
+        <video controls autoplay>
+            <!-- 视频文件路径 -->
+            <source src="video.mp4" type="video/mp4">
+            
+            <!-- 备用提示：如果浏览器不支持视频播放 -->
+            您的浏览器不支持视频播放，请使用最新版Chrome、Firefox或Edge浏览器。
+        </video>
+        
+        <div class="info">
+            点击视频控制播放/暂停 | 双击视频全屏
+        </div>
+    </div>
+</body>
+</html>
